@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ebyt"
+version = "0.1.0"
+description = ""
+authors = [{name="Isaac Symes Thompson", email="isymesthompson@turing.ac.uk"}]
+readme = "README.md"
+dependencies = ["gym==0.21.0", "typing_extensions", "hyperstate", "enn_trainer", "torch==1.12.0+cpu", "torch-scatter", "stable_baselines3==1.6.2", "wandb", "platformdirs", "networkx", "tinydb", "tabulate"]
+requires-python = "==3.9.20"
+
+
+[tool.ruff.lint]
+ignore = ["E731"]
+[tool.ruff.format]
+# Use single quotes rather than double quotes.
+# Double quotes are preserved for triple quotes (eg. doc-strings).
+quote-style = "single"
+
+[tool.setuptools]
+packages = { find = { where = ["src"] } }

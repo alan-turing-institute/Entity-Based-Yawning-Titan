@@ -1,0 +1,10 @@
+services:
+  entity-yt:
+    build: .
+    platform: linux/amd64
+    hostname: entity_yt_host
+    container_name: entity-yt-container
+    ports:
+     - '6006:6006' #tensorboard if using
+    volumes:
+     - .:/app

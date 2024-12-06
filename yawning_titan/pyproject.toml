@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yawningtitan"
+description = "An abstract, flexible and configurable cyber security simulation."
+authors = [{name="Defence Science and Technology Laboratory UK", email="oss@dstl.gov.uk"}]
+license = {file = "LICENSE"}
+version = "2.0.1"
+
+[tool.setuptools.dynamic]
+version = {file = "src/yawning_titan/VERSION"}
+readme = {file = "README.md"}
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+license-files = ["LICENSE"]
