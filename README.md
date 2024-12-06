@@ -1,15 +1,18 @@
-# Entity-based Yawning Titan.
 
-This repository contains a version of the [Yawning Titan](https://github.com/dstl/YAWNING-TITAN) cyber simulator as released by DSTL, adapted to the [Entity Gym](https://github.com/entity-neural-network/entity-gym) interface for [*entity-based* reinforcement learning](https://clemenswinter.com/2023/04/14/entity-based-reinforcement-learning/).
+<img src="media/ebyt.png" alt="Entity-Based Yawning Titan" width="150">
 
+# Entity-Based Yawning Titan
+This repository contains an adaptation of the <a href="https://github.com/dstl/YAWNING-TITAN">Yawning Titan</a> cyber simulator, as released by DSTL, to the <a href="https://github.com/entity-neural-network/entity-gym">Entity Gym</a> interface. This adaptation enables <a href="https://clemenswinter.com/2023/04/14/entity-based-reinforcement-learning/">entity-based reinforcement learning</a>, which is designed to improve the generalisability of reinforcement learning agents across varying network topologies.
 
-We also provide training and evaluation scripts that can be used to reproduce the experiments in the workshop paper *[Entity-based Reinforcement Learning for Autonomous Cyber Defence](https://arxiv.org/abs/2410.17647)*, written as an introduction and motivation for the reinforcement learning for autonomous cyber defence community.
+  The repository provides training and evaluation scripts that can reproduce the experiments described in the workshop paper <em><a href="https://arxiv.org/abs/2410.17647">Entity-based Reinforcement Learning for Autonomous Cyber Defence</a></em>. This paper introduces and motivates the use of entity-based reinforcement learning in the context of autonomous cyber defence.
 
-The training scripts use the [Entity-Neural-Net Trainer](https://github.com/entity-neural-network/enn-trainer) package and its default PPO implementation, as well as the *[RogueNet](https://github.com/entity-neural-network/rogue-net)* Transformer policy implementation provided as companions to Entity Gym, applied to a modified entity-based Yawning Titan Environment.
+  The training process leverages the <a href="https://github.com/entity-neural-network/enn-trainer">Entity-Neural-Net Trainer</a> package and its default Proximal Policy Optimization (PPO) implementation. It also uses the <a href="https://github.com/entity-neural-network/rogue-net">RogueNet</a> Transformer policy, specifically designed for Entity Gym environments, applied to a modified entity-based Yawning Titan environment.
 
-Baseline scripts used for comparison, use the default [Stable Baselines 3](https://github.com/DLR-RM/stable-baselines3) PPO trainer, with Multilayer Perceptron policy parameterisation. These are trained on an equivalent generic Yawning Titan environment but with an [OpenAI Gym](https://github.com/openai/gym) interface.
+  For comparison, baseline scripts utilize the <a href="https://github.com/DLR-RM/stable-baselines3">Stable Baselines 3</a> PPO trainer with Multilayer Perceptron policy parameterisation. These baselines are trained on an equivalent Yawning Titan environment that retains the <a href="https://github.com/openai/gym">OpenAI Gym</a> interface.
 
-If using this repository in your research, you may cite our [companion paper](https://arxiv.org/abs/2410.17647):
+  If you use this repository in your research, please consider citing our <a href="https://arxiv.org/abs/2410.17647">companion paper</a>:
+</p>
+
 ```bibtex
 @article{SymesThompson2024EntityACD,
   title={Entity-based Reinforcement Learning for Autonomous Cyber Defence},
@@ -17,7 +20,7 @@ If using this repository in your research, you may cite our [companion paper](ht
   journal={arXiv preprint arXiv:2410.17647v2},
   year={2024}
 }
-```
+
 
 Please also cite the original Yawning Titan work, with citation specified in the repository [here](https://github.com/dstl/YAWNING-TITAN). If using the Entity Gym package, consider citing their [repository](https://github.com/entity-neural-network/entity-gym) or the original [blog post](https://clemenswinter.com/2023/04/14/entity-based-reinforcement-learning/) by the authors, as we do in the paper.
 ## Setup
