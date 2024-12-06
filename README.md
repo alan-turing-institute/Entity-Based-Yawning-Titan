@@ -11,7 +11,12 @@ Baseline scripts used for comparison, use the default [Stable Baselines 3](https
 
 If using this repository in your research, you may cite our [companion paper](https://arxiv.org/abs/2410.17647):
 ```bibtex
-@article{}
+@article{SymesThompson2024EntityACD,
+  title={Entity-based Reinforcement Learning for Autonomous Cyber Defence},
+  author={Symes Thompson, Isaac and Caron, Alberto and Hicks, Chris and Mavroudis, Vasilios},
+  journal={arXiv preprint arXiv:2410.17647v2},
+  year={2024}
+}
 ```
 
 Please also cite the original Yawning Titan work, with citation specified in the repository [here](https://github.com/dstl/YAWNING-TITAN). If using the Entity Gym package, consider citing their [repository](https://github.com/entity-neural-network/entity-gym) or the original [blog post](https://clemenswinter.com/2023/04/14/entity-based-reinforcement-learning/) by the authors, as we do in the paper.
