@@ -20,7 +20,7 @@ This repository contains an adaptation of the <a href="https://github.com/dstl/Y
   journal={arXiv preprint arXiv:2410.17647v2},
   year={2024}
 }
-
+```
 
 Please also cite the original Yawning Titan work, with citation specified in the repository [here](https://github.com/dstl/YAWNING-TITAN). If using the Entity Gym package, consider citing their [repository](https://github.com/entity-neural-network/entity-gym) or the original [blog post](https://clemenswinter.com/2023/04/14/entity-based-reinforcement-learning/) by the authors, as we do in the paper.
 ## Setup
