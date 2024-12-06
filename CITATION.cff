@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the following work."
+authors:
+  - family-names: "Symes Thompson"
+    given-names: "Isaac"
+  - family-names: "Caron"
+    given-names: "Alberto"
+  - family-names: "Hicks"
+    given-names: "Chris"
+  - family-names: "Mavroudis"
+    given-names: "Vasilios"
+title: "Entity-based Reinforcement Learning for Autonomous Cyber Defence"
+year: 2024
+version: "v2"
+doi: "10.48550/arXiv.2410.17647"
+url: "https://arxiv.org/abs/2410.17647v2"
