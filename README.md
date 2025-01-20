@@ -2,14 +2,14 @@
 <img src="media/ebyt.png" alt="Entity-Based Yawning Titan" width="150">
 
 # Entity-Based Yawning Titan
-This repository contains an adaptation of the <a href="https://github.com/dstl/YAWNING-TITAN">Yawning Titan</a> cyber simulator, as released by DSTL, to the <a href="https://github.com/entity-neural-network/entity-gym">Entity Gym</a> interface. This adaptation enables <a href="https://clemenswinter.com/2023/04/14/entity-based-reinforcement-learning/">entity-based reinforcement learning</a>, which is designed to improve the generalisability of reinforcement learning agents across varying network topologies.
+This repository contains an adaptation of the <a href="https://github.com/dstl/YAWNING-TITAN">Yawning Titan</a> cyber simulator, as released by Dstl, to the <a href="https://github.com/entity-neural-network/entity-gym">Entity Gym</a> interface. This adaptation enables <a href="https://clemenswinter.com/2023/04/14/entity-based-reinforcement-learning/">entity-based reinforcement learning</a> with Yawning Titan, allowing for natural generalisability of reinforcement learning agents across varying network topologies.
 Developed at the [AI for Cyberdefence Research Centre (AICD)](https://turing.ac.uk/aicd).
 
   The repository provides training and evaluation scripts that can reproduce the experiments described in the workshop paper <em><a href="https://arxiv.org/abs/2410.17647">Entity-based Reinforcement Learning for Autonomous Cyber Defence</a></em>. This paper introduces and motivates the use of entity-based reinforcement learning in the context of autonomous cyber defence.
 
-  The training process leverages the <a href="https://github.com/entity-neural-network/enn-trainer">Entity-Neural-Net Trainer</a> package and its default Proximal Policy Optimization (PPO) implementation. It also uses the <a href="https://github.com/entity-neural-network/rogue-net">RogueNet</a> Transformer policy, specifically designed for Entity Gym environments, applied to a modified entity-based Yawning Titan environment.
+  The training scripts for entity-based reinforcement learning leverage the <a href="https://github.com/entity-neural-network/rogue-net">RogueNet</a> Transformer policy implementation, which is part of the [Entity-Neural-Network](https://github.com/entity-neural-network) ecosystem alongside Entity Gym. This policy is trained using the <a href="https://github.com/entity-neural-network/enn-trainer">Entity-Neural-Net Trainer</a> package and its implementation of Proximal Policy Optimization (PPO). 
 
-  For comparison, baseline scripts utilize the <a href="https://github.com/DLR-RM/stable-baselines3">Stable Baselines 3</a> PPO trainer with Multilayer Perceptron policy parameterisation. These baselines are trained on an equivalent Yawning Titan environment that retains the <a href="https://github.com/openai/gym">OpenAI Gym</a> interface.
+  For comparison, baseline training scripts for non-entity-based reinforcement learning utilise the <a href="https://github.com/DLR-RM/stable-baselines3">Stable Baselines 3</a> PPO trainer with a multilayer perceptron policy parameterisation. These baselines are trained on an equivalent Yawning Titan environment that retains the <a href="https://github.com/openai/gym">OpenAI Gym</a> interface.
 
   If you use this repository in your research, please consider citing our <a href="https://arxiv.org/abs/2410.17647">companion paper</a>:
 </p>
@@ -87,7 +87,7 @@ pip install -e yawning_titan
 pip install -e .
 ```
 ## Weights & Biases setup
-Logging with Weights & Biases is supported. When training an entity-based agent, this involves modifying the training config file (in `src/ebg/configs/yawning_titan/train_config/EntitYT ... .ron`) to add a wandb user and project, and enabling tracking. For example:
+Logging with Weights & Biases is supported. When training an entity-based agent, this involves modifying the training config file (in `src/ebyt/configs/yawning_titan/train_config/EntitYT ... .ron`) to add a wandb user and project, and enabling tracking. For example:
 ```rust
 TrainConfig(
     ...
@@ -117,7 +117,7 @@ wandb.init(
 )
 ```
 ## Overview of Entity-based Yawning Titan environment
-The `EntityYT` environment class inside `src/ebg/envs/entity_cyber/entity_yawning_titan_generic.py` contains the Entity-based version of the Yawning Titan environment. It is derived from the `GenericNetworkEnv` environment, which can be found in `yawning_titan/src/yawning_titan/envs/generic/generic_env.py` for reference.
+The `EntityYT` environment class inside `src/ebyt/envs/entity_cyber/entity_yawning_titan_generic.py` contains the Entity-based version of the Yawning Titan environment. It is derived from the `GenericNetworkEnv` environment, which can be found in `yawning_titan/src/yawning_titan/envs/generic/generic_env.py` for reference.
 
 Broadly speaking, the main difference between an 'entity-based' approach and the approach used in the Yawning Titan environment is that the observation and action spaces are treated as collections of distinct objects or entities (nodes), whereas in the default Gym environment all features are concatenated into a unified observation vector.
 
@@ -169,7 +169,7 @@ Here, a potentially variable length list of node features is provided to the age
 The actions available to the agent are defined by action masks over the previously specified action spaces. There is no action mask on the high level action type space. The action mask on the SelectEntityActionSpace determines that the 'Defender' entity is to act on the 'Generic_Node' entities. This prompts the policy network to use information in the embedding of the Defender entity to decide which node to execute the defensive action on. If there were multiple Defender entities then an action would be chosen for each Defender, since the mask is based on entity types rather than specific entities.
 ## Overview of Scripts
 
-All scripts are present in the `src/ebg/train_eval/` directory.
+All scripts are present in the `src/ebyt/train_eval/` directory.
 ### 1. `EntityYT_train.py`
 This script facilitates training using the `EntityYT` entity-based yawning titan environment. It trains a version of PPO 
 
