@@ -49,6 +49,9 @@ This is tested with python 3.9 on Ubuntu 22.04, CPU only. With models of default
 #### Step 1: Install Gym 0.21.0
 Installing Gym 0.21.0 using pip requires specific versions of setuptools and wheel, otherwise installation is likely to fail.
 ```bash
+pip install pip==24.0
+```
+```bash
 pip install setuptools==66 wheel==0.38.4
 ```
 ```bash
@@ -68,7 +71,7 @@ pip install typing_extensions hyperstate enn_trainer
 For a CPU-only version of PyTorch, run:
 
 ```bash
-pip install torch==1.12.0+cpu --extra-index-url https://download.pytorch.org/whl/cpu
+pip install torch==1.12.0 --extra-index-url https://download.pytorch.org/whl/cpu
 ```
 ```bash
 pip install --no-cache-dir --no-index torch-scatter -f https://data.pyg.org/whl/torch-1.12.0+cpu.html
@@ -249,8 +252,7 @@ Evaluates a checkpointed Stable Baselines 3 PPO agent on a Yawning Titan environ
  - "*--checkpoint-dir*" Specifies a directory to load checkpoints from. By default, the most recent checkpoint beginning with "EntityYT" in the checkpoints directory will be loaded.
 #### Example Usage:
 ```bash
-python Sb3_PPO_YT_evaluate.py --n-nodes 10 --edge-prob 0.1 --episode-length 100 \
-    --checkpoint-dir checkpoints/Sb3_PPO_YT_checkpoint_dir --num-evals 30
+python Sb3_PPO_YT_evaluate.py --n-nodes 10 --edge-prob 0.1 --episode-length 100 --num-evals 30
 ```
 
 ## Overview of Configuration files
