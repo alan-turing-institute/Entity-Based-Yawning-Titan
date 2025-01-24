@@ -18,7 +18,7 @@ Developed at the [AI for Cyberdefence Research Centre (AICD)](https://turing.ac.
 @article{SymesThompson2024EntityACD,
   title={Entity-based Reinforcement Learning for Autonomous Cyber Defence},
   author={Symes Thompson, Isaac and Caron, Alberto and Hicks, Chris and Mavroudis, Vasilios},
-  journal={arXiv preprint arXiv:2410.17647v2},
+  journal={arXiv preprint arXiv:2410.17647v3},
   year={2024}
 }
 ```
